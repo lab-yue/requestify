@@ -1,11 +1,11 @@
-#!/usr/bin/env python3
+# !/usr/bin/env python3
 # -*- coding: utf-8 -*-
 import os
 import re
 import sys
 
 
-class Generate(object):
+class __Generate(object):
     def __init__(self, base_string):
         self.base_string = base_string
         self.url = ''
@@ -53,7 +53,7 @@ class Generate(object):
                 self.cookies[k] = v
             except ValueError:
                 raise
-            # self.__update_length(k)
+                # self.__update_length(k)
         return self.cookies
 
     def __format_headers(self, headers):
@@ -87,22 +87,12 @@ class Generate(object):
         #    return key.replace(':', f'{pad}:')
 
 
-class Requestify(object):
-    def __init__(self):
-        self.from_clipboard = Generate(self.__get_clipboard())
+def __get_clipboard():
+    return os.popen('pbpaste').read()
 
-    def from_clipboard(self):
-        return Generate(self.__get_clipboard())
 
-    @staticmethod
-    def __get_clipboard():
-        return os.popen('pbpaste').read()
+from_clipboard = __Generate(__get_clipboard())
 
-    @staticmethod
-    def from_string(base_string):
-        return Generate(base_string)
 
-requestify = Requestify()
-
-if __name__ == '__main__':
-    pass
+def from_string(base_string):
+    return __Generate(base_string)

@@ -7,13 +7,13 @@ setup(name='requestify',
       author_email='yue.official.jp@gmail.com',
 
       classifiers=[
-            'Development Status :: 4 - Beta',
-            'Intended Audience :: Developers',
-            'Programming Language :: Python :: 3.6',
+          'Development Status :: 4 - Beta',
+          'Intended Audience :: Developers',
+          'Programming Language :: Python :: 3.6',
       ],
-      url='https://www.python.org/sigs/distutils-sig/',
+      python_requires='>=3.6',
+      url='https://github.com/minatsuki-yui/requestify',
       license="MIT Licence",
       packages=find_packages(),
-      scripts=["main.py","generate.py"],
-      install_requires = ["requests"]
-     )
+      install_requires=["requests"]
+      )
