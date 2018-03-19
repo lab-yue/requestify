@@ -112,7 +112,7 @@ requestify.from_clipboard.to_file('new_request.py', with_cookies=False,with_head
 
 <h2>Appendix:</h2>
 
-you can also access the url , headers , cookies as python variable without writing them to a file
+you can also access the url , headers , cookies as python variables without writing them to a file
 
 for instance:
 
