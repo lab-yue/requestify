@@ -1,6 +1,6 @@
 <h2>Description:</h2>
 
-<p style="font-size: 20px">A script to convert cURL into python requests code in few seconds</p>
+<p style="font-size: 20px">A scaffold to convert cURL into python requests code in few seconds</p>
 
 <h2>Install:</h2>
 
@@ -45,7 +45,7 @@ import requestify
 requestify.from_clipboard.to_current_file()
 ```
 
-This will rewrite current file with new code
+This will rewrite the current file with new code
 
 <h4>If you want to use from_string() , paste your cURL into a new string variable.</h4>
 
@@ -128,3 +128,6 @@ print(data.headers)
 print(data.cookies)
 # {'_octo': '............', '_ga': '............', 'user_session': '............', '__Host-user_session_same_site': '............', 'logged_in': '............', 'dotcom_user': '............', 'tz': '............', '_gat': '............', '_gh_sess': '............'}
 ```
+
+
+Plan to replace the method of getting opts in the future.
