@@ -6,10 +6,6 @@ import sys
 from urllib import parse
 
 
-def get_data_dict(query):
-    return dict(parse.parse_qsl(query))
-
-
 class __Generate(object):
     def __init__(self, base_string):
         self.base_string = base_string.strip()
@@ -20,11 +16,11 @@ class __Generate(object):
         self.querys = {}
         self.data = None
         self.__post_handler = {
-            '-d': lambda x: get_data_dict(x),
-            '--data': lambda x: get_data_dict(x),
-            '--data-ascii': lambda x: get_data_dict(x),
+            '-d': lambda x: __get_data_dict(x),
+            '--data': lambda x: __get_data_dict(x),
+            '--data-ascii': lambda x: __get_data_dict(x),
             '--data-binary': lambda x: bytes(x, encoding='utf-8'),
-            '--data-raw': lambda x: get_data_dict(x),
+            '--data-raw': lambda x: __get_data_dict(x),
             '--data-urlencode': lambda x: parse.quote(x)
         }
         self.__opt_list = []
@@ -146,6 +142,9 @@ def __get_clipboard():
         except:
             raise IOError('Unable to read clipboard text')
 
+def __get_data_dict(query):
+    return dict(parse.parse_qsl(query))
+
 
 from_clipboard = __Generate(__get_clipboard())
 
@@ -155,6 +154,7 @@ def from_string(base_string):
 
 
 if __name__ == '__main__':
+    
     test_string = '''
 curl 'https://www.google.com/' -H 'authority: www.google.com' -H 'pragma: no-cache' -H 'cache-control: no-cache' -H 'upgrade-insecure-requests: 1' -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.139 Safari/537.36' -H 'accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8' -H 'x-client-data: CI62yQEIprbJAQjEtskBCKmdygEI153KAQioo8oB' -H 'accept-encoding: gzip, deflate, br' -H 'accept-language: zh-CN,zh;q=0.9,ja;q=0.8,en;q=0.7' --compressed
     '''
