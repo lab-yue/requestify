@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='requestify',
-      version='1.0.0',
+      version='1.1.0',
       description='convert curl to python requests code',
       author='Yue Minatsuki',
       author_email='yue.official.jp@gmail.com',

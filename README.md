@@ -12,19 +12,19 @@ There are two ways of input and output:
 
 Input :     
 
-+ **from_clipboard**       &nbsp;##(for mac only)
-+  **from_string(your_string)**
++ **from_clipboard**       &nbsp;##(windows not tested)
++  **from_string('...your_string...')**
 
 output:  
 
-+ **to_file('your_file_name')** 
++ **to_file('...your_file_name...')**
 + **to_current_file()**
 
 <h2>Examples:</h2>
 
 <h3>1.copy cURL from Chrome </h3>
 
-![](./example/img1.png)
+![](./imgs/img1.png)
 
 
 <h3>2.create a new script </h3>
@@ -45,7 +45,7 @@ import requestify
 requestify.from_clipboard.to_current_file()
 ```
 
-This will rewrite the current file with new code
+This will overwrite the current file with new code
 
 <h4>If you want to use from_string() , paste your cURL into a new string variable.</h4>
 
@@ -128,6 +128,3 @@ print(data.headers)
 print(data.cookies)
 # {'_octo': '............', '_ga': '............', 'user_session': '............', '__Host-user_session_same_site': '............', 'logged_in': '............', 'dotcom_user': '............', 'tz': '............', '_gat': '............', '_gh_sess': '............'}
 ```
-
-
-Plan to replace the method of getting opts in the future.
